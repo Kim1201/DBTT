@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!--<script src="{% static 'script.js' %}"></script>-->
+    <title>Weather App</title>
+</head>
+<body>
+    
+
+    <p style="margin-left: 400px;margin-top: 30px;"> Chọn Tên Tỉnh Thành. </p>
+    <!-- <select name="cars" id="cars">-->
+        <select style="margin-left: 400px;"name= "flatform" id="select-province" onchange="getMapIframeData()"> 
+            
+            <option value="bv">Bà Rịa - Vũng Tàu
+                <option value="bg">Bắc Giang
+                <option value="bk">Bắc Kạn
+                <option value="bl">Bạc Liêu
+                <option value="bn">Bắc Ninh
+                <option value="bt">Bến Tre
+                <option value="bd">Bình Định
+                <option value="bd2">Bình Dương
+                <option value="bp">Bình Phước           
+                <option value="bth">Bình Thuận
+                <option value="cm">Cà Mau
+                <option value="cb">Cao Bằng
+                <option value="dl">Đắk Lắk
+                <option value="dn">Đắk Nông
+                <option value="db">Điện Biên
+                <option value="dn">Đồng Nai
+                <option value="dt">Đồng Tháp
+                <option value="gl">Gia Lai
+                <option value="hg">Hà Giang
+                <option value="hn">Hà Nam
+                <option value="ht">Hà Tĩnh
+                <option value="hd">Hải Dương
+                <option value="hg">Hậu Giang
+                <option value="hb">Hòa Bình
+                <option value="hy">Hưng Yên
+                <option value="kh">Khánh Hòa
+                <option value="kg">Kiên Giang
+                <option value="kt">Kon Tum
+                <option value="lc">Lai Châu
+                <option value="ld">Lâm Đồng
+                <option value="ls">Lạng Sơn
+                <option value="lc2">Lào Cai
+                <option value="la">Long An
+                <option value="nd">Nam Định
+                <option value="na">Nghệ An
+                <option value="nb">Ninh Bình
+                <option value="nt">Ninh Thuận
+                <option value="pt">Phú Thọ
+                <option value="qb">Quảng Bình
+                <option value="qn">Quảng Ngãi
+                <option value="qn2">Quảng Ninh
+                <option value="qt">Quảng Trị
+                <option value="st">Sóc Trăng
+                <option value="sl">Sơn La
+                <option value="tb2">Tây Ninh
+                <option value="tb">Thái Bình
+                <option value="tn">Thái Nguyên
+                <option value="th">Thanh Hóa
+                <option value="tth">Thừa Thiên Huế
+                <option value="tg">Tiền Giang
+                <option value="tv">Trà Vinh
+                <option value="tq">Tuyên Quang
+                <option value="vl">Vĩnh Long
+                <option value="vp">Vĩnh Phúc
+                <option value="yb">Yên Bái
+                <option value="py">Phú Yên
+                <option value="ct">Cần Thơ
+                <option value="dn3">Đà Nẵng
+                <option value="hp">Hải Phòng
+                <option value="hn">Hà Nội
+                <option value="hcm">Hồ Chí Minh
+            </select>
+    <br><br>
+    <div class="container">
+        <label class="others" id="map-items"></label>
+        <!-- <p style="margin-left: 800px;margin-top: 30px;">  -->
+        <div class="current-info">  
+            <form method="post" class="col-md"">
+                {% csrf_token %}
+
+            <div class="date-container">
+                <div class="time" id="time">
+                    12:30 <span id="am-pm">PM</span>
+                </div>
+                <div class="date" id="date">
+                    Monday, 25 May
+                </div>
+                <div class="others" id="current-weather-items">
+                    
+                    
+                </div>
+            </div>
+
+            <div class="place-container">
+                <div class="time-zone" id="time-zone">Asia/Kolkata</div>
+                <div id="country" class="country">IN</div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <div class="future-forecast">
+        <div class="today" id="current-temp">
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+            <div class="other">
+                <div class="day">Monday</div>
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+        </div>
+
+        <div class="weather-forecast" id="weather-forecast">
+            <div class="weather-forecast-item">
+                <div class="day">Tue</div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Wed</div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Thur</div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Fri</div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Sat</div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{% static 'script.js' %}"></script>
+    
+    
+</body>
+</html>
