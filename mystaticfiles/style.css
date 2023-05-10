@@ -2,7 +2,7 @@
 {% load static %}
 *{
     box-sizing: border-box;
-    margin:0;0
+    margin:0;
 }
 
 body{
@@ -73,7 +73,7 @@ body{
 
 .future-forecast{
     background: rgba(24,24,27,0.8);
-    padding: 25px;
+    padding: 20px;
     position: fixed;
     bottom: 0;
     display: flex;
@@ -93,6 +93,7 @@ body{
     padding:15px;
     padding-right: 40px;
     border-radius: 10px;
+    width: 200px;
     background: rgba(0,0,0,0.2)
 }
 
@@ -119,7 +120,7 @@ body{
     justify-content: center;
     margin: 0 10px;
     border: 1px solid #eee;
-    padding: 15px;
+    padding: 5px;
     border-radius: 10px;
     background: rgba(0,0,0,0.2)
 }
@@ -136,8 +137,12 @@ body{
     font-size: 12px;
 }
 
+.weather-forecast .weather-forecast-item .temp-hour{
+    font-weight: bold;
+    font-size: 12px;
+}
 
-@media only screen and  (max-width:730px){
+@media only screen and  (max-width:1500px){
     
     .container{
         padding: 20px;
@@ -184,10 +189,35 @@ body{
 
 }
 
-@media only screen and (max-width: 1400px){
+@media only screen and (max-width: 1500px){
     .future-forecast{
         justify-content: start;
-        align-items: none;
+        align-items: start;
         overflow-x: scroll;
     }
 }
+
+.future-forecast-map{
+    display: inline-block;
+    width: 100%;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 50px;
+    padding: 10px;
+  }
+
+  .item1 {
+    grid-row: 1 / span 2;
+  }
+
+  .i-am-centered { margin: auto; max-width: 200px;}
+
+  p.thick {
+    font-weight: 900;
+  }
+
+  #current-temp {
+    width: 600px;
+  }

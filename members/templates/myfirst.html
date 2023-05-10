@@ -8,107 +8,114 @@
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <!--<script src="{% static 'script.js' %}"></script>-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <title>Weather App</title>
 </head>
 <body>
     
 
-    <p style="margin-left: 400px;margin-top: 30px;"> Chọn Tên Tỉnh Thành. </p>
+    <p style="margin-left: 550px;margin-top:20px;color:white;font-weight: bold"> Chọn Tên Tỉnh Thành </p>
     <!-- <select name="cars" id="cars">-->
-        <select style="margin-left: 400px;"name= "flatform" id="select-province" onchange="getMapIframeData()"> 
+        <select style="margin-left: 550px;"name= "flatform" id="select-province" onchange="getMapIframeData()"> 
             
-            <option value="bv">Bà Rịa - Vũng Tàu
-                <option value="bg">Bắc Giang
-                <option value="bk">Bắc Kạn
-                <option value="bl">Bạc Liêu
-                <option value="bn">Bắc Ninh
-                <option value="bt">Bến Tre
-                <option value="bd">Bình Định
-                <option value="bd2">Bình Dương
-                <option value="bp">Bình Phước           
-                <option value="bth">Bình Thuận
-                <option value="cm">Cà Mau
-                <option value="cb">Cao Bằng
-                <option value="dl">Đắk Lắk
-                <option value="dn">Đắk Nông
-                <option value="db">Điện Biên
-                <option value="dn">Đồng Nai
-                <option value="dt">Đồng Tháp
-                <option value="gl">Gia Lai
-                <option value="hg">Hà Giang
-                <option value="hn">Hà Nam
-                <option value="ht">Hà Tĩnh
-                <option value="hd">Hải Dương
-                <option value="hg">Hậu Giang
-                <option value="hb">Hòa Bình
-                <option value="hy">Hưng Yên
-                <option value="kh">Khánh Hòa
-                <option value="kg">Kiên Giang
-                <option value="kt">Kon Tum
-                <option value="lc">Lai Châu
-                <option value="ld">Lâm Đồng
-                <option value="ls">Lạng Sơn
-                <option value="lc2">Lào Cai
-                <option value="la">Long An
-                <option value="nd">Nam Định
-                <option value="na">Nghệ An
-                <option value="nb">Ninh Bình
-                <option value="nt">Ninh Thuận
-                <option value="pt">Phú Thọ
-                <option value="qb">Quảng Bình
-                <option value="qn">Quảng Ngãi
-                <option value="qn2">Quảng Ninh
-                <option value="qt">Quảng Trị
-                <option value="st">Sóc Trăng
-                <option value="sl">Sơn La
-                <option value="tb2">Tây Ninh
-                <option value="tb">Thái Bình
-                <option value="tn">Thái Nguyên
-                <option value="th">Thanh Hóa
-                <option value="tth">Thừa Thiên Huế
-                <option value="tg">Tiền Giang
-                <option value="tv">Trà Vinh
-                <option value="tq">Tuyên Quang
-                <option value="vl">Vĩnh Long
-                <option value="vp">Vĩnh Phúc
-                <option value="yb">Yên Bái
-                <option value="py">Phú Yên
-                <option value="ct">Cần Thơ
-                <option value="dn3">Đà Nẵng
-                <option value="hp">Hải Phòng
-                <option value="hn">Hà Nội
-                <option value="hcm">Hồ Chí Minh
+            <option value="bv|10.621101617339459|105.13766406891631">Bà Rịa - Vũng Tàu
+                <option value="bg|10.628489007732798|107.20640070298082">Bắc Giang
+                <option value="bk|22.157009042885683|105.81800542226269">Bắc Kạn`
+                <option value="bl|9.290058258445379|105.74763157348185">Bạc Liêu
+                <option value="bn|21.173037605894997|106.0673313528217">Bắc Ninh
+                <option value="bt|10.244317851940853|106.38653641806887">Bến Tre
+                <option value="bd|14.352679945006539|108.99305253365624">Bình Định
+                <option value="bd2|11.339584366571652|106.47512488100281">Bình Dương
+                <option value="bp|11.852750899460567|106.91916229352549">Bình Phước           
+                <option value="bth|11.264140272181523|107.7371717675498">Bình Thuận
+                <option value="cm|9.20890769474561|105.18338983574172">Cà Mau
+                <option value="cb|22.663808176663718|106.22958621082357">Cao Bằng
+                <option value="dl|13.02271436263416|107.8798226276482">Đắk Lắk
+                <option value="dn|12.177308451599833|107.59173244023869">Đắk Nông
+                <option value="db|21.408003884691023|103.01782286588406">Điện Biên
+                <option value="dn|10.951384911691797|107.13932645584126">Đồng Nai
+                <option value="dt|10.637450761056247|105.6492849886356">Đồng Tháp
+                <option value="gl|13.918707886311484|108.12879759854825">Gia Lai
+                <option value="hg|22.814433073686892|104.94821019605418">Hà Giang
+                <option value="hn|20.567155074104775|105.9493933134829">Hà Nam
+                <option value="ht|18.361571553408098|105.88157299608011">Hà Tĩnh
+                <option value="hd|20.944301250867973|106.32792318311523">Hải Dương
+                <option value="hg|9.80870836206304|105.57356405234162">Hậu Giang
+                <option value="hb|20.820841977311115|105.33230480298258">Hòa Bình
+                <option value="hy|20.671315502408557|106.062797272142">Hưng Yên
+                <option value="kh|12.339389752329165|108.90130060315857">Khánh Hòa
+                <option value="kg|10.331768523965557|103.9847619682799">Kiên Giang
+                <option value="kt|14.367423309232722|107.95846288071331">Kon Tum
+                <option value="lc|22.41262700990651|103.4242152546746">Lai Châu
+                <option value="ld|11.71342719437648|107.9370629396058">Lâm Đồng
+                <option value="ls|21.875936699914718|106.74665673600646">Lạng Sơn
+                <option value="lc2|22.433599628641655|103.96916707558474">Lào Cai
+                <option value="la|10.944532678546075|105.72939187514167">Long An
+                <option value="nd|20.427726230892855|106.15093109637178">Nam Định
+                <option value="na|19.413347991327754|104.52723736390236">Nghệ An
+                <option value="nb|20.306853694390576|105.74520284484375">Ninh Bình
+                <option value="nt|11.823345307211898|108.79289420193165">Ninh Thuận
+                <option value="pt|21.501033488459612|105.13764445125746">Phú Thọ
+                <option value="qb|17.566920892146808|106.25364293765395">Quảng Bình
+                <option value="qn|15.137852887490634|108.85264123812969">Quảng Ngãi
+                <option value="qn2|21.185450935146346|107.18517380302156	">Quảng Ninh
+                <option value="qt|16.83099706026894|106.9632764311909">Quảng Trị
+                <option value="st|9.624089925503828|105.97317563101004">Sóc Trăng
+                <option value="sl|21.30824484741592|103.81070970362174">Sơn La
+                <option value="tb2|11.391431275695696|106.0956594222019">Tây Ninh
+                <option value="tb|20.594271609244316|106.36188115652824">Thái Bình
+                <option value="tn|21.567140548534944|105.78357203020828">Thái Nguyên
+                <option value="th|19.823551137137716|105.7937965712534">Thanh Hóa
+                <option value="tth|16.431030309888286|107.43053442338457">Thừa Thiên Huế
+                <option value="tg|10.431258297821593|106.23493732213304">Tiền Giang
+                <option value="tv|9.95042614036935|106.3359243570026">Trà Vinh
+                <option value="tq|21.81175912574941|105.23281783796597">Tuyên Quang
+                <option value="vl|10.252393717644043|105.92415755151346">Vĩnh Long
+                <option value="vp|21.447068620326323|105.5362042575941">Vĩnh Phúc
+                <option value="yb|21.715305212207177|104.89833438160265">Yên Bái
+                <option value="py|13.328733596341115|109.01262388928669">Phú Yên
+                <option value="ct|10.041790922816672|105.74297782334916">Cần Thơ
+                <option value="dn3|16.069766553755596|108.0314139944348">Đà Nẵng
+                <option value="hp|20.85266748296253|106.69222232517856">Hải Phòng
+                <option value="hn|21.030265507464694|105.82031130592432">Hà Nội
+                <option value="hcm|10.82072017417959|106.66630352657187">Hồ Chí Minh
             </select>
     <br><br>
-    <div class="container">
-        <label class="others" id="map-items"></label>
-        <!-- <p style="margin-left: 800px;margin-top: 30px;">  -->
-        <div class="current-info">  
-            <form method="post" class="col-md"">
-                {% csrf_token %}
-
-            <div class="date-container">
-                <div class="time" id="time">
-                    12:30 <span id="am-pm">PM</span>
+    <div class="row">
+        <div style="width: 70px;"></div>
+        <div  class="col-md-4">
+            <div class="container">
+                <div class="current-info">  
+                    <form method="post" class="col-md">
+                        {% csrf_token %}
+        
+                    <div class="date-container">
+                        <div class="time" id="time">
+                            12:30 <span id="am-pm">PM</span>
+                        </div>
+                        <div class="date" id="date">
+                            Monday, 25 May
+                        </div>
+                        <div class="others" id="current-weather-items">
+                            
+                            
+                        </div>
+                    </div>
+        
+                    <div class="place-container">
+                        <div class="time-zone" id="time-zone">Asia/Kolkata</div>
+                        <div id="country" class="country">IN</div>
+                    </div>
                 </div>
-                <div class="date" id="date">
-                    Monday, 25 May
-                </div>
-                <div class="others" id="current-weather-items">
-                    
-                    
-                </div>
-            </div>
-
-            <div class="place-container">
-                <div class="time-zone" id="time-zone">Asia/Kolkata</div>
-                <div id="country" class="country">IN</div>
             </div>
         </div>
-
-        
+        <div style="width: 300px;"></div>
+        <div class="col-md-4">
+            <div class="others" id="map-items"></div>
+        </div>
     </div>
-
+</div>
     <div class="future-forecast">
         <div class="today" id="current-temp">
             <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
